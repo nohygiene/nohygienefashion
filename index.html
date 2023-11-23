@@ -1,138 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>nohygienefashion</title>
-
-<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    .mainimage {
-  
-    
- 
-}
-
-
-
     body {
-      cursor: default;
+      margin: 0;
+      overflow: hidden;
+      background-image: url('arkaplan.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    a:link {
-      cursor: pointer;
+    #image-container {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
     }
 
-    .mainimage {
-      cursor: pointer;
+    .image {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      overflow: hidden;
+      position: absolute;
+      border: 2px solid transparent;
     }
 
-    .gorsel-alan {
-  display: inline-block;
-  margin: 2px;
-  display: center;
-}
+    .image:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px 5px red;
+      border: 2px solid red;
+      z-index: 1;
+      animation-play-state: paused;
+    }
 
+    .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  .aciklama {
-    
-    font-size: 12px; 
-    color: red; 
-    text-align: center; 
-  }
+    .image-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: transparent
+      color: white;
+      padding: 3px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
 
+    .image:hover .image-info {
+      opacity: 1;
+    }
+
+    a {
+      color: rgb(255, 0, 0);
+      text-decoration: none;
+    }
+
+    @keyframes moveRight {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(50px);
+      }
+      50% {
+        transform: translateX(100px);
+      }
+      75% {
+        transform: translateX(50px);
+      }
+    }
+
+    @keyframes moveLeft {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-50px);
+      }
+      50% {
+        transform: translateX(-100px);
+      }
+      75% {
+        transform: translateX(-50px);
+      }
+    }
+
+    @keyframes moveDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(50px);
+      }
+      50% {
+        transform: translateY(100px);
+      }
+      75% {
+        transform: translateY(50px);
+      }
+    }
+
+    @keyframes moveUp {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(-50px);
+      }
+      50% {
+        transform: translateY(-100px);
+      }
+      75% {
+        transform: translateY(-50px);
+      }
+    }
+
+    @keyframes moveDiagonal {
+      0%, 100% {
+        transform: translate(-50px, -50px);
+      }
+      25% {
+        transform: translate(50px, 50px);
+      }
+      50% {
+        transform: translate(100px, -100px);
+      }
+      75% {
+        transform: translate(-50px, 50px);
+      }
+    }
   </style>
 </head>
-</body>
-
-<body style="background-image: url('sample26.jpg'); background-size: 256px 256px; background-position: center top; background-repeat: no-repeat; background-color: black;"></body>
-<body style="background-color: black;"></body>
-
-<style>
-  
-    body {
-      font-family: "Spacemono", monospace;
-      font-size: 15px;
-      color: rgb(255, 0, 0);
-    }
-    </style>
-    
-    <style>
-        a {
-          color: red;
-        } 
-        font-weight: lighter;
-        </style>
-       <style>
-        
-        img {
-          
-          display: block;
-          margin: 0 auto;
-        }
-        
-        img:hover {
-        
-        filter: brightness(250%);
-        filter: contrast(100%);
-        
-      }
-      
-
-      </style>
-    
-<center>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
- 
- 
-  <br>
-  <br>
-  
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-</center>
-<center>
-
- 
-
- <a href="nohygienefashioninstallation.html">nohygienefashioninstallation</a>
- <br>
- <br>
- formlessness@protonmail.com
- <br>
- donation tezos: tz1cWc92txKYxPJMLXn9CN9vpLvtKmczD1E3 - ethereum: 0x3083ae3CA9F6C76A00B58d6E65778C67E1090a0b
-
- 
-
-</center>
-
 <body>
-     
-  
 
+<div id="image-container"></div>
 
-</center>
+<script>
+  const images = [
+    { src: 'images1.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images2.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images3.png', name: '', link: 'https://www.example.com/page3' },
+    { src: 'images4.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images5.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images6.png', name: '', link: 'https://www.example.com/page3' },
+    { src: 'images7.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images8.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images9.png', name: '', link: 'https://www.example.com/page3' },
+    { src: 'images10.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images11.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images12.png', name: '', link: 'https://www.example.com/page3' },
+    { src: 'images13.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images14.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images15.png', name: '', link: 'https://www.example.com/page3' },
+    { src: 'images16.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images17.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images18.png', name: '', link: 'https://www.example.com/page3' },
+    { src: 'images19.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images20.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images21.png', name: '', link: 'https://www.example.com/page3' },
+    { src: 'images22.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images23.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images24.png', name: '', link: 'https://www.example.com/page3' },
+    { src: 'images25.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images26.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images27.png', name: '', link: 'https://www.example.com/page3' },
+    { src: 'images28.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images29.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images30.png', name: '', link: 'https://www.example.com/page3' },
+    { src: 'images31.png', name: '', link: 'https://www.example.com/page1' },
+    { src: 'images32.png', name: '', link: 'https://www.example.com/page2' },
+    { src: 'images33.png', name: '', link: 'https://www.example.com/page3' },
+    // Add more image data as needed
+  ];
 
+  const backgroundImagePath = 'arkaplan.png';
 
+  function getRandomPosition() {
+    const x = Math.floor(Math.random() * window.innerWidth);
+    const y = Math.floor(Math.random() * window.innerHeight);
+    return { x, y };
+  }
 
+  function getRandomAnimation() {
+    const animations = ['moveUp', 'moveDown', 'moveRight', 'moveLeft', 'moveDiagonal'];
+    const randomIndex = Math.floor(Math.random() * animations.length);
+    return animations[randomIndex];
+  }
 
+  function getRandomDuration() {
+    const durations = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60];
+    const randomIndex = Math.floor(Math.random() * durations.length);
+    return durations[randomIndex];
+  }
 
+  function createImage(imageData) {
+    const image = document.createElement('div');
+    image.className = 'image';
+    const position = getRandomPosition();
+    const animation = getRandomAnimation();
+    const duration = getRandomDuration();
+    image.style.left = `${position.x}px`;
+    image.style.top = `${position.y}px`;
+    image.style.animation = `${animation} ${duration}s infinite linear`;
 
+    const imgElement = document.createElement('img');
+    imgElement.src = `resimler/${imageData.src}`;
 
+    const infoElement = document.createElement('div');
+    infoElement.className = 'image-info';
+    infoElement.innerHTML = `<p>${imageData.name}</p><a href="${imageData.link}" target="_blank">Detaylar</a>`;
 
+    image.appendChild(imgElement);
+    image.appendChild(infoElement);
+    document.getElementById('image-container').appendChild(image);
+  }
 
+  function initializeImages() {
+    images.forEach(imageData => {
+      createImage(imageData);
+    });
+  }
 
-</body>
+  window.onload = function() {
+    initializeImages();
+    document.body.style.backgroundImage = `url('${backgroundImagePath}')`;
+  };
+
+  document.addEventListener('mousemove', function(event) {
+    const images = document.querySelectorAll('.image');
+    images.forEach(image => {
+      const rect = image.getBoundingClientRect();
+      if (
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom
+      ) {
+        image.style.animationPlayState = 'paused';
+      } else {
+        image.style.animationPlayState = 'running';
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
-</body>
-</html>
-
